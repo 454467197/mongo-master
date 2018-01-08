@@ -1,0 +1,13 @@
+2018-01-05 01:55:33,627 [main] WARN  [jtest] - warn级别的日志输出
+  2018-01-05 01:55:33,627 [main] ERROR [jtest] - error级别的日志输出
+  2018-01-05 01:55:33,627 [main] FATAL [jtest] - fatal级别的日志输出
+  2018-01-05 01:56:13,935 [main] WARN  [jtest] - warn级别的日志输出
+  2018-01-05 01:56:13,935 [main] ERROR [jtest] - error级别的日志输出
+  2018-01-05 01:56:13,935 [main] FATAL [jtest] - fatal级别的日志输出
+  2018-01-05 02:07:33,896 [main] WARN  [jtest] - warn级别的日志输出
+  2018-01-05 02:07:33,897 [main] ERROR [jtest] - error级别的日志输出
+  2018-01-05 02:07:33,897 [main] FATAL [jtest] - fatal级别的日志输出
+  2018-01-05 02:12:19,149 [main] WARN  [jtest] - warn级别的日志输出
+  2018-01-05 02:12:19,157 [main] ERROR [jtest] - error级别的日志输出
+  2018-01-05 02:12:19,157 [main] FATAL [jtest] - fatal级别的日志输出
+  
