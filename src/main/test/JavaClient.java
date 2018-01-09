@@ -1,4 +1,6 @@
+import com.mongodb.Block;
 import com.mongodb.MongoClient;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
@@ -37,6 +39,10 @@ import java.util.*;
  }
  */
 
+/**
+ *
+ *  使用原生客户端Document的方式进行增删改查
+ */
 public class JavaClient {
 
    private MongoDatabase dbs;
@@ -48,6 +54,7 @@ public class JavaClient {
     public  void  init()
     {
         System.out.println("init....");
+        // 直接new MongoClient 获取MongoClient hostname
         cl=new MongoClient("192.168.1.109");
         dbs=cl.getDatabase("test");
         collection=dbs.getCollection("users");
@@ -55,7 +62,8 @@ public class JavaClient {
 
     }
     @Test
-    public  void test(){
+    public  void testinsert(){
+
         DeleteResult dr=collection.deleteMany(Filters.eq("username","wuyanzu"));
         System.out.println("删除了"+dr.getDeletedCount()+"行...");
         Document  doc=new Document();
@@ -82,6 +90,18 @@ public class JavaClient {
         doc.append("lenght",1.75f);
         collection.insertOne(doc);
         System.out.printf("结束");
+
+    }
+    @Test
+    public  void  testforEach (){
+        FindIterable<Document> result=collection.find();
+        Block b=new Block<Document>() {
+            @Override
+            public void apply(Document o) {
+                System.out.println(o.toJson());
+            }
+        };
+        result.forEach(b);
     }
 }
 
